@@ -15,7 +15,10 @@ import { TrhSymbols } from "@trh/symbols";
 
 // Cloneable objects
 class Point implements TrhSymbols.Cloneable {
-    constructor(public x: number, public y: number) {}
+    constructor(
+        public x: number,
+        public y: number,
+    ) {}
 
     [TrhSymbols.Clone](): this {
         return new Point(this.x, this.y) as this;
@@ -24,7 +27,10 @@ class Point implements TrhSymbols.Cloneable {
 
 // Comparable objects
 class Version implements TrhSymbols.Comparable {
-    constructor(public major: number, public minor: number) {}
+    constructor(
+        public major: number,
+        public minor: number,
+    ) {}
 
     [TrhSymbols.Compare](other: unknown): number {
         if (!(other instanceof Version)) {
@@ -37,11 +43,14 @@ class Version implements TrhSymbols.Comparable {
 }
 
 // Containable objects
-class Range implements TrhSymbols.Containable<number> {
-    constructor(public min: number, public max: number) {}
+class Queue implements TrhSymbols.Containable<string> {
+    #data: string[];
+    constructor() {
+        this.#data = [];
+    }
 
-    [TrhSymbols.Contains](value: number): boolean {
-        return value >= this.min && value <= this.max;
+    [TrhSymbols.Contains](value: string): boolean {
+        return this.#data.includes(value);
     }
 }
 
@@ -68,7 +77,9 @@ class State implements TrhSymbols.LensNavigable {
     [TrhSymbols.LensNav] = {
         value: {
             access: () => this.value,
-            mutate: (v: number) => { this.value = v; },
+            mutate: (v: number) => {
+                this.value = v;
+            },
         },
     };
 }

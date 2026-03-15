@@ -1,4 +1,10 @@
 export namespace TrhSymbols {
+    export const Clone = Symbol();
+
+    export interface Cloneable {
+        [Clone]: () => this;
+    }
+
     export const Compare = Symbol();
     export const Contains = Symbol();
     export const Equals = Symbol();

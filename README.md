@@ -71,15 +71,21 @@ class CustomClass implements TrhSymbols.Typeable {
 }
 
 // LensNavigable objects
-class State implements TrhSymbols.LensNavigable {
-    value = 0;
+class Vector2 implements TrhSymbols.LensNavigable {
+    #x: number;
+    #y: number;
 
     [TrhSymbols.LensNav] = {
-        value: {
-            access: () => this.value,
-            mutate: (v: number) => {
-                this.value = v;
+        x: {
+            access: () => this.#x,
+            mutate: (value: number) => {
+                this.#x = value;
             },
+            apply: (value: number) => new Vector2(value, this.#y),
+        },
+        magnitude: {
+            compute: () => Math.sqrt(this.#x ** 2 + this.#y ** 2),
+            // no mutate/apply — read-only by design
         },
     };
 }

@@ -1,7 +1,7 @@
 {
     "name": "@trh/symbols",
     "license": "UNLICENSE",
-    "version": "2.0.0",
+    "version": "2.0.1",
     "scripts": {
         "build": "tsup src/*.ts",
         "clean": "rm -rf ./dist",

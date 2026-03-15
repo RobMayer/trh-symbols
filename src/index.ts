@@ -1,16 +1,15 @@
 export namespace TrhSymbols {
-    export const Clone = Symbol();
+    export const Clone = Symbol.for("@trh/symbols/Clone");
 
     export interface Cloneable {
         [Clone]: () => this;
     }
 
-    export const Compare = Symbol();
-    export const Contains = Symbol();
-    export const Equals = Symbol();
-    export const TypeOf = Symbol();
-
-    export const LensNav = Symbol();
+    export const Compare = Symbol.for("@trh/symbols/Compare");
+    export const Contains = Symbol.for("@trh/symbols/Contains");
+    export const Equals = Symbol.for("@trh/symbols/Equals");
+    export const TypeOf = Symbol.for("@trh/symbols/TypeOf");
+    export const LensNav = Symbol.for("@trh/symbols/LensNav");
 
     export interface Comparable {
         [Compare]: (other: unknown) => number; // -1, 0, 1

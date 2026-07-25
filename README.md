@@ -32,7 +32,7 @@ class Version implements TrhSymbols.Comparable {
         public minor: number,
     ) {}
 
-    [TrhSymbols.Compare](other: unknown): number {
+    [TrhSymbols.Compare](other: unknown): number | null {
         if (!(other instanceof Version)) {
             return this < other ? -1 : this > other ? 1 : 0;
         }
@@ -105,7 +105,7 @@ class Vector2 implements TrhSymbols.LensNavigable {
 ### Interfaces
 
 - `TrhSymbols.Cloneable` - Objects that can clone themselves
-- `TrhSymbols.Comparable` - Objects that can be compared with others (returns -1, 0, 1)
+- `TrhSymbols.Comparable` - Objects that can be compared with others (returns -1, 0, 1, null); null indicates meaningless comparison
 - `TrhSymbols.Containable<T>` - Objects that can check if they contain a value
 - `TrhSymbols.Equatable` - Objects that can check equality with others
 - `TrhSymbols.Typeable` - Objects that can return their type name

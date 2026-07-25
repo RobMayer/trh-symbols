@@ -1,7 +1,7 @@
 {
     "name": "@trh/symbols",
     "license": "UNLICENSE",
-    "version": "2.0.1",
+    "version": "2.1.0",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/RobMayer/trh-symbols.git"
@@ -23,14 +23,9 @@
             "require": "./dist/index.js"
         }
     },
-    "packageManager": "pnpm@10.6.4+sha512.da3d715bfd22a9a105e6e8088cfc7826699332ded60c423b14ec613a185f1602206702ff0fe4c438cb15c979081ce4cb02568e364b15174503a63c7a8e2a5f6c",
+    "packageManager": "pnpm@11.17.0+sha512.cca3cea332ad254bb84145f966d19f4879615210346fc92c79a047f23a0d7b3cca3c3792f0076ba1f1831d277efbcf0a9119b31a9a60eca7fb3d6231f331ef72",
     "devDependencies": {
         "tsup": "^8.5.1",
         "typescript": "^5.9.3"
-    },
-    "pnpm": {
-        "onlyBuiltDependencies": [
-            "esbuild"
-        ]
     }
 }

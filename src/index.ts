@@ -12,7 +12,7 @@ export namespace TrhSymbols {
     export const LensNav = Symbol.for("@trh/symbols/LensNav");
 
     export interface Comparable {
-        [Compare]: (other: unknown) => number; // -1, 0, 1
+        [Compare]: (other: unknown) => number | null; // -1, 0, 1; null indicates meaningless comparison
     }
 
     export interface Containable<T> {

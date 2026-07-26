@@ -7,20 +7,27 @@
         "url": "git+https://github.com/RobMayer/trh-symbols.git"
     },
     "scripts": {
-        "build": "tsdown src/*.ts",
+        "build": "tsdown",
         "clean": "rm -rf ./dist",
         "lint": "tsc"
     },
     "files": [
         "./dist"
     ],
-    "main": "dist/index.js",
+    "type": "module",
+    "main": "dist/index.cjs",
     "module": "dist/index.mjs",
-    "types": "dist/index.d.ts",
+    "types": "dist/index.d.cts",
     "exports": {
         ".": {
-            "import": "./dist/index.mjs",
-            "require": "./dist/index.js"
+            "import": {
+                "types": "./dist/index.d.mts",
+                "default": "./dist/index.mjs"
+            },
+            "require": {
+                "types": "./dist/index.d.cts",
+                "default": "./dist/index.cjs"
+            }
         }
     },
     "packageManager": "pnpm@11.17.0+sha512.cca3cea332ad254bb84145f966d19f4879615210346fc92c79a047f23a0d7b3cca3c3792f0076ba1f1831d277efbcf0a9119b31a9a60eca7fb3d6231f331ef72",

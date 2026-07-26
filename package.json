@@ -9,7 +9,8 @@
     "scripts": {
         "build": "tsdown",
         "clean": "rm -rf ./dist",
-        "lint": "tsc"
+        "lint": "tsc",
+        "prepublishOnly": "rm -rf ./dist && tsdown"
     },
     "files": [
         "./dist"

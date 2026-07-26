@@ -9,8 +9,8 @@
     "scripts": {
         "build": "tsdown",
         "clean": "rm -rf ./dist",
-        "lint": "tsc",
-        "prepublishOnly": "rm -rf ./dist && tsdown"
+        "lint": "tsc --noEmit",
+        "prepublishOnly": "tsc --noEmit && rm -rf ./dist && tsdown"
     },
     "files": [
         "./dist"
